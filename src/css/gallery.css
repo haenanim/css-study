@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+#wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: rgb(241, 241, 241);
+}
+.card {
+  grid-column: auto;
+  background-color: white;
+  margin: 8px;
+  box-shadow: 1px 1px 5px 1px rgb(112, 112, 112);
+}
+h3 {
+  margin: 5px;
+  padding: 28px 0px;
+  font-size: 28px;
+}
+p {
+  line-height: 30px;
+  padding: 0px 5px;
+}
