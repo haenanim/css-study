@@ -6,14 +6,26 @@
     <title>Document</title>
     <script>
       document.write('<h1>asdf</h1>');
-      let input = prompt('숫자를 입력 해 주세요');
-      input = parseInt(input);
-      console.log(typeof input);
-      if (typeof input == 'number') {
-        alert('숫자네');
+      // let input = prompt('숫자를 입력 해 주세요');
+      // input = parseInt(input);
+      // console.log(typeof input);
+      // if (typeof input == 'number') {
+      //   alert('숫자네');
+      // } else {
+      //   alert('숫자가 아니네');
+      // }
+
+      let today = new Date();
+      today.toLocaleString();
+      document.write(today);
+
+      if (today.getSeconds() % 2) {
+        document.body.style.backgroundColor = 'purple';
       } else {
-        alert('숫자가 아니네');
+        document.body.style.backgroundColor = 'blue';
       }
+      let str = new String('Hello world');
+      document.write(str + '은' + str.length);
     </script>
   </head>
   <body></body>
