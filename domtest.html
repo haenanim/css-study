@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>테스트</h3>
+    <hr />
+    이름<input id="id" type="text" /> 주소<input id="add" type="text" />
+    상세주소<input id="add2" type="text" /><br />
+    주소지 동일<input
+      id="checkbox"
+      type="checkbox"
+      onclick="sameInfo()"
+    /><br />
+    이름<input id="del-id" type="text" /> 주소<input id="del-add" type="text" />
+    상세주소<input id="del-add2" type="text" /><br />
+    <script>
+      function sameInfo() {
+        let id = document.getElementById('id');
+        let add = document.getElementById('add');
+        let add2 = document.getElementById('add2');
+        let delId = document.getElementById('del-id');
+        let delAdd = document.getElementById('del-add');
+        let delAdd2 = document.getElementById('del-add2');
+
+        let checkbox = document.getElementById('checkbox');
+
+        if (checkbox.checked) {
+          delId.value = id.value;
+          delId.disabled = true;
+          delAdd.value = add.value;
+          delAdd.disabled = true;
+          delAdd2.value = add2.value;
+          delAdd2.disabled = true;
+        } else {
+          delId.value = '';
+          delId.disabled = false;
+          delAdd.value = '';
+          delAdd.disabled = false;
+          delAdd2.value = '';
+          delAdd2.disabled = false;
+        }
+      }
+    </script>
+  </body>
+</html>
