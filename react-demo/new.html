@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script type="text/babel">
+    const root = document.getElementById('root');
+    let counter = 0;
+    function increaseCount() {
+      counter++;
+      ReactDOM.render(App, root);
+    }
+    function P() {
+      return (
+        <p
+          id="count"
+          onMouseEnter={() => console.log('마우스 엔터 이벤트 발생')}
+        >
+          0 번 클릭했습니다.
+        </p>
+      );
+    }
+    const Btn = () => (
+      <button
+        onClick={() => {
+          increaseCount();
+          console.log('버튼 클릭 이벤트 발생');
+        }}
+      >
+        Click
+      </button>
+    );
+    const App = (
+      <div>
+        <P />
+        <Btn />
+      </div>
+    );
+    ReactDOM.render(App, root);
+  </script>
+</html>

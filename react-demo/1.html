@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+  <script type="text/babel">
+    function App() {
+      const [index, setIndex] = React.useState('0');
+      const onSelect = (event) => {
+        console.log(event.target.value);
+        setIndex(event.target.value);
+      };
+      return (
+        <div>
+          <h1>Converter</h1>
+          <select value={index} onChange={onSelect}>
+            <option value="0">Select Unit Converter</option>
+            <option value="1">Time Converter</option>
+            <option value="2">Length Converter</option>
+          </select>
+          <hr />
+          {index === '0' ? 'Please select units you want to convert' : null}
+          {index === '1' ? <TimeConverter /> : null}
+          {index === '2' ? <LengthConverter /> : null}
+        </div>
+      );
+    }
+    const root = document.getElementById('root');
+    ReactDOM.render(<App />, root);
+  </script>
+</html>
